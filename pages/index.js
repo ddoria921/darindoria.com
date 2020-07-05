@@ -2,18 +2,13 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="max-w-screen-sm mx-auto">
+    <div className="max-w-screen-sm mx-auto py-6 px-3">
       <header>
         <nav>
           <ul>
             <li>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </li>
-            <li>
               <Link href="/work-journal">
-                <a>Work Journal</a>
+                <a className="text-lg text-blue-700 underline">Work Journal</a>
               </Link>
             </li>
           </ul>

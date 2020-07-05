@@ -5,11 +5,6 @@ import { getAllJournalEntries } from "../lib/api";
 import JournalEntry from "../components/journal-entry";
 
 export default function WorkJournal({ journalEntries }) {
-  // const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
-  const items = [1, 2];
-
-  console.log({ journalEntries });
-
   return (
     <>
       <Head>
