@@ -9,6 +9,13 @@
 :root {
   --animate-in: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.15s;
   --animate-delayed: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.45s;
+  --dark-bg-color: #121317;
+  --dark-card-color: #1a1c23;
 }
 
 /* custom CSS utilities go here */
+@screen dark {
+  body {
+    background-color: var(--dark-bg-color);
+  }
+}

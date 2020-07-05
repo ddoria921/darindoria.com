@@ -13,8 +13,8 @@ function JournalEntryCard({ title, body }) {
   return (
     <>
       {/* info-card */}
-      <div className="bg-white shadow rounded-md px-4 py-3">
-        <h3 className="text-xs uppercase tracking-wider font-bold text-gray-900">
+      <div className="journal-entry-card light:bg-white shadow rounded-md px-4 py-3">
+        <h3 className="text-xs uppercase tracking-wider font-bold text-gray-900 dark:text-gray-400">
           {title}
         </h3>
         {/* journal info goes here */}
@@ -28,7 +28,7 @@ function JournalEntryCard({ title, body }) {
 }
 
 function NextButton({ hidden, swiper, className, ...props }) {
-  const btnClasses = `bg-gray-200 rounded-lg w-20 h-10 sm:rounded-full sm:flex-none sm:self-center sm:w-6 sm:h-6 ${
+  const btnClasses = `bg-gray-200 rounded-lg w-20 h-10 sm:rounded-full sm:flex-none sm:self-center sm:w-6 sm:h-6 dark:bg-indigo-800 ${
     hidden ? "opacity-25 cursor-not-allowed" : "opacity-100"
   } ${className}`.trim();
   return (
@@ -40,7 +40,7 @@ function NextButton({ hidden, swiper, className, ...props }) {
       {...props}
     >
       <svg
-        className="text-gray-500 m-auto w-10 h-10 sm:w-6 sm:h-6"
+        className="text-gray-500 m-auto w-10 h-10 sm:w-6 sm:h-6 dark:text-indigo-200"
         fill="currentColor"
         viewBox="0 0 20 20"
       >
@@ -55,7 +55,7 @@ function NextButton({ hidden, swiper, className, ...props }) {
 }
 
 function PreviousButton({ hidden, swiper, className, ...props }) {
-  const btnClasses = `bg-gray-200 rounded-lg w-20 h-10 sm:rounded-full sm:flex-none sm:self-center sm:w-6 sm:h-6 ${
+  const btnClasses = `bg-gray-200 rounded-lg w-20 h-10 sm:rounded-full sm:flex-none sm:self-center sm:w-6 sm:h-6 dark:bg-indigo-800 ${
     hidden ? "opacity-25 cursor-not-allowed" : "opacity-100"
   } ${className}`.trim();
   return (
@@ -67,7 +67,7 @@ function PreviousButton({ hidden, swiper, className, ...props }) {
       {...props}
     >
       <svg
-        className="text-gray-500 m-auto w-10 h-10 sm:w-6 sm:h-6"
+        className="text-gray-500 m-auto w-10 h-10 sm:w-6 sm:h-6 dark:text-indigo-200"
         fill="currentColor"
         viewBox="0 0 20 20"
       >
