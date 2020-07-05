@@ -13,6 +13,10 @@ export default function WorkJournal({ journalEntries }) {
           name="description"
           content="A weekly record of notable things going on at work, with side projects or general learnings."
         />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/swiper/swiper-bundle.min.css"
+        />
       </Head>
       <div className="mt-8">
         <ul className="relative mx-auto pl-12 pr-6 w-full md:max-w-screen-sm lg:max-w-screen-md sm:pl-40">
