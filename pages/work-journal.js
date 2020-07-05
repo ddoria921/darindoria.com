@@ -8,7 +8,7 @@ export default function WorkJournal({ journalEntries }) {
   return (
     <>
       <Head>
-        <title>Darin Doria - Work Journal</title>
+        <title>Work Journal - Darin Doria</title>
         <meta
           name="description"
           content="A weekly record of notable things going on at work, with side projects or general learnings."
@@ -19,7 +19,10 @@ export default function WorkJournal({ journalEntries }) {
         />
       </Head>
       <div className="mt-8">
-        <ul className="relative mx-auto pl-12 pr-6 w-full md:max-w-screen-sm lg:max-w-screen-md sm:pl-40">
+        <h3 className="mt-2 mx-auto text-3xl leading-8 font-extrabold tracking-tight text-gray-900 w-full text-center md:max-w-screen-sm lg:max-w-screen-md sm:text-4xl sm:leading-10 dark:text-gray-200">
+          Work Journal
+        </h3>
+        <ul className="relative mx-auto mt-6 pl-12 pr-6 w-full md:max-w-screen-sm lg:max-w-screen-md sm:pl-40">
           {journalEntries.map((entry, i) => (
             <VisibilitySensor
               key={i}
