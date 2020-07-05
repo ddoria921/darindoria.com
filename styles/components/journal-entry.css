@@ -123,6 +123,10 @@
   }
 }
 
+.journal-entry:last-child .journal-entry-date {
+  display: none;
+}
+
 /* Markdown styling */
 .journal-entry-content ul {
   @apply list-disc;
