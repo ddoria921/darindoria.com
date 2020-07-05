@@ -12,6 +12,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-visibility-sensor": "^5.1.1",
+    "snarkdown": "^1.2.2",
     "swiper": "^6.0.0"
   },
   "devDependencies": {

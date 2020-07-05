@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Darin Doria</title>
+        <meta name="description" content="Personal website of Darin Doria." />
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="stylesheet"

@@ -1,22 +1,29 @@
 import SwiperCore, { Navigation, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useState, useEffect } from "react";
+import snarkdown from "snarkdown";
 
 // install Swiper components
 SwiperCore.use([A11y]);
 
 const buttonClasses = "";
 
-function JournalEntryCard() {
+function JournalEntryCard({ title, body }) {
+  const bodyAsHtml = snarkdown(body);
   return (
     <>
       {/* info-card */}
       <div className="bg-white shadow rounded-md px-4 py-3">
         <h3 className="text-xs uppercase tracking-wider font-bold text-gray-900">
-          Work
+          {title}
         </h3>
+        {/* <img src="/vercel.svg" alt="" /> */}
         {/* journal info goes here */}
-        <ul className="list-disc pl-6 mt-2 text-gray-900">
+        <div
+          class="journal-entry-content"
+          dangerouslySetInnerHTML={{ __html: bodyAsHtml }}
+        ></div>
+        {/* <ul className="list-disc pl-6 mt-2 text-gray-900">
           <li>Wrote summary for video 3</li>
           <li>Recorded voiceover for video 3</li>
           <li>Research how to deploy Storybook</li>
@@ -27,7 +34,7 @@ function JournalEntryCard() {
             and scrambled it to make a type specimen book. It has survived not
             only five centuries,
           </li>
-        </ul>
+        </ul> */}
       </div>
     </>
   );
@@ -85,16 +92,15 @@ function PreviousButton({ hidden, swiper, className, ...props }) {
   );
 }
 
-export default function JournalEntry({ visible }) {
+export default function JournalEntry({ visible, model }) {
   const journalEntryClasses = `journal-entry flex flex-col sm:flex-row relative w-full pb-8 ${
     visible ? "is-visible" : ""
   }`.trim();
   const [swiper, setSwiper] = useState(null);
-  const [hideNext, setHideNext] = useState(false);
+  const [hideNext, setHideNext] = useState(true);
   const [hidePrev, setHidePrev] = useState(true);
 
   function handleSlideChange(swiper) {
-    console.log({ swiper });
     setHidePrev(swiper.isBeginning);
     setHideNext(swiper.isEnd);
   }
@@ -105,7 +111,12 @@ export default function JournalEntry({ visible }) {
     }
   }
 
-  useEffect(updateSwiper);
+  useEffect(() => {
+    if (swiper) {
+      handleSlideChange(swiper);
+    }
+  }, [swiper]);
+  useEffect(updateSwiper, [swiper]);
 
   return (
     <li className={journalEntryClasses}>
@@ -133,20 +144,17 @@ export default function JournalEntry({ visible }) {
       <div className="journal-entry-card-container relative w-full flex-auto sm:max-w-md md:max-w-none">
         <Swiper
           a11y={true}
+          autoHeight={true}
           centeredSlides={true}
           onSlideChange={handleSlideChange}
           onSwiper={setSwiper}
           spaceBetween={18}
         >
-          <SwiperSlide className="p-2">
-            <JournalEntryCard />
-          </SwiperSlide>
-          <SwiperSlide className="p-2">
-            <JournalEntryCard />
-          </SwiperSlide>
-          <SwiperSlide className="p-2">
-            <JournalEntryCard />
-          </SwiperSlide>
+          {model.entries.map((entry, i) => (
+            <SwiperSlide className="p-2" key={i}>
+              <JournalEntryCard title={entry.title} body={entry.body} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
 

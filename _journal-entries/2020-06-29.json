@@ -1,0 +1,13 @@
+{
+  "date": "2020-06-29T00:00:00.000Z",
+  "entries": [
+    {
+      "title": "Side Projects",
+      "body": "* Recorded and wrote summary for 3rd video in EmberMap Storybook series\n* Deployed a placeholder for [darindoria.com](darindoria.com) using Vercel\n* Started sketching out UI for work journal"
+    },
+    {
+      "title": "Learnings",
+      "body": "* Found out about the `i` selector in CSS for case insensitive attribute matching  [Link](https://alvaromontoro.com/blog/67839/case-insensitive-selectors-in-css)\n* Started using Next.js - super straight forward\n* First time using React since hooks were announced - hooks take some getting used to\n"
+    }
+  ]
+}

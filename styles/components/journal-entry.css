@@ -122,3 +122,21 @@
     bottom: calc(100% - 20px);
   }
 }
+
+/* Markdown styling */
+.journal-entry-content ul {
+  @apply list-disc;
+  @apply pl-6;
+  @apply mt-2;
+  @apply text-gray-900;
+}
+
+.journal-entry-content code {
+  @apply px-1;
+  @apply bg-gray-300;
+}
+
+.journal-entry-content a {
+  @apply text-blue-600;
+  @apply underline;
+}
