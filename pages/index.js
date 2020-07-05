@@ -1,6 +1,24 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <>
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <Link href="/">
+                <a>Home</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/work-journal">
+                <a>Work Journal</a>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
       <main className="pt-8">
         <h1 className="text-3xl">🚧 Under Construction 🚧</h1>
         <p className="text-lg mt-4">

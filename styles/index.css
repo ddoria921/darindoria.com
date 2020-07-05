@@ -1,10 +1,14 @@
 @tailwind base;
 @tailwind components;
 
-/* custom css goes here */
-body {
-  max-width: 800px;
-  margin: auto;
-}
+/* custom CSS component class go here  */
+@import "components/journal-entry.css";
 
 @tailwind utilities;
+
+:root {
+  --animate-in: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.15s;
+  --animate-delayed: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.45s;
+}
+
+/* custom CSS utilities go here */

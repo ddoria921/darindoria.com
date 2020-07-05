@@ -1,0 +1,124 @@
+.journal-entry-line {
+  @apply absolute;
+  @apply inset-y-0;
+  @apply bg-gray-300;
+
+  width: 2px;
+  left: -2rem;
+}
+
+/* .journal-entry:first-child.is-visible .journal-entry-date {
+  transform: translateY(15px);
+} */
+
+.journal-entry:first-child .journal-entry-line {
+  top: 8px;
+}
+
+.journal-entry:last-child .journal-entry-line {
+  bottom: calc(100% - 10px);
+}
+
+.journal-entry-bullet {
+  @apply border-2;
+  @apply border-gray-500;
+  @apply rounded-full;
+  @apply bg-white;
+  @apply w-4;
+  @apply h-4;
+  @apply absolute;
+
+  top: 4px;
+  left: -39px;
+
+  /* animated */
+  transform: scale(0.5);
+  transition: transform var(--animate-delayed);
+}
+
+.journal-entry-date {
+  @apply text-base;
+  @apply text-gray-700;
+  @apply pl-2;
+
+  white-space: nowrap;
+
+  /* animated */
+  opacity: 0.001;
+  transform: translateX(-40px);
+  transition: transform var(--animate-delayed), opacity var(--animate-delayed);
+}
+
+.journal-entry-card-container {
+  opacity: 0.001;
+  transform: translateX(-40px);
+  transition: transform var(--animate-delayed), opacity var(--animate-delayed);
+}
+
+.journal-entry.is-visible .journal-entry-bullet {
+  transform: scale(1);
+  transition: transform var(--animate-in);
+}
+
+.journal-entry.is-visible .journal-entry-date {
+  transform: translateX(0);
+  opacity: 0.99;
+  transition: transform var(--animate-in), opacity var(--animate-in);
+}
+
+.journal-entry.is-visible .journal-entry-card-container {
+  transform: translateX(0);
+  opacity: 0.99;
+  transition: transform var(--animate-in), opacity var(--animate-in);
+}
+
+.journal-entry button {
+  transition: opacity var(--animate-in);
+}
+
+.journal-entry.is-visible button:not(:disabled) {
+  opacity: 0.99;
+}
+
+.journal-entry:not(.is-visible) button {
+  opacity: 0.001;
+}
+
+/* Bigger than mobile */
+@media (min-width: 640px) {
+  /* Offset first bullet a little up so it looks more aligned  */
+  .journal-entry.is-visible:first-child .journal-entry-bullet {
+    transform: translateY(12px);
+  }
+
+  .journal-entry-bullet {
+    transform: scale(0.5) translateY(13px);
+  }
+
+  .journal-entry.is-visible .journal-entry-bullet {
+    transform: scale(1) translateY(13px);
+  }
+
+  .journal-entry-date {
+    @apply text-sm;
+    @apply pr-12;
+    @apply pl-0;
+
+    position: absolute;
+    right: 100%;
+    transform: translate(20px, 13px);
+  }
+
+  /* Offset first bullet a little up so it looks more aligned  */
+  .journal-entry.is-visible .journal-entry-date {
+    transform: translate(0, 13px);
+  }
+
+  .journal-entry:first-child .journal-entry-line {
+    top: 18px;
+  }
+
+  .journal-entry:last-child .journal-entry-line {
+    bottom: calc(100% - 20px);
+  }
+}

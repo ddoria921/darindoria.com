@@ -10,7 +10,9 @@
   "dependencies": {
     "next": "9.4.4",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-visibility-sensor": "^5.1.1",
+    "swiper": "^6.0.0"
   },
   "devDependencies": {
     "postcss-preset-env": "^6.7.0",
