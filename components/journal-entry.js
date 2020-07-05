@@ -17,24 +17,11 @@ function JournalEntryCard({ title, body }) {
         <h3 className="text-xs uppercase tracking-wider font-bold text-gray-900">
           {title}
         </h3>
-        {/* <img src="/vercel.svg" alt="" /> */}
         {/* journal info goes here */}
         <div
-          class="journal-entry-content"
+          className="journal-entry-content"
           dangerouslySetInnerHTML={{ __html: bodyAsHtml }}
         ></div>
-        {/* <ul className="list-disc pl-6 mt-2 text-gray-900">
-          <li>Wrote summary for video 3</li>
-          <li>Recorded voiceover for video 3</li>
-          <li>Research how to deploy Storybook</li>
-          <li>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries,
-          </li>
-        </ul> */}
       </div>
     </>
   );
@@ -46,6 +33,7 @@ function NextButton({ hidden, swiper, className, ...props }) {
   } ${className}`.trim();
   return (
     <button
+      aria-label="next journal entry"
       disabled={hidden}
       onClick={() => swiper && swiper.slideNext()}
       className={btnClasses}
@@ -72,6 +60,7 @@ function PreviousButton({ hidden, swiper, className, ...props }) {
   } ${className}`.trim();
   return (
     <button
+      aria-label="previous journal entry"
       disabled={hidden}
       onClick={() => swiper && swiper.slidePrev()}
       className={btnClasses}
@@ -122,7 +111,7 @@ export default function JournalEntry({ visible, model }) {
     <li className={journalEntryClasses}>
       {/* date */}
       <p className="journal-entry-date sm:text-right">
-        <span className="italic">
+        <span className="sm:italic">
           Week of <br className="hidden sm:block" />
         </span>{" "}
         June 22nd
@@ -168,32 +157,4 @@ export default function JournalEntry({ visible, model }) {
       </div>
     </li>
   );
-}
-
-function useWindowSize() {
-  const isClient = typeof window === "object";
-
-  function getSize() {
-    return {
-      width: isClient ? window.innerWidth : undefined,
-      height: isClient ? window.innerHeight : undefined,
-    };
-  }
-
-  const [windowSize, setWindowSize] = useState(getSize);
-
-  useEffect(() => {
-    if (!isClient) {
-      return false;
-    }
-
-    function handleResize() {
-      setWindowSize(getSize());
-    }
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []); // Empty array ensures that effect is only run on mount and unmount
-
-  return windowSize;
 }
