@@ -137,7 +137,7 @@ export default function JournalEntry({ visible, model }) {
           centeredSlides={true}
           onSlideChange={handleSlideChange}
           onSwiper={setSwiper}
-          spaceBetween={18}
+          spaceBetween={40}
         >
           {model.entries.map((entry, i) => (
             <SwiperSlide className="p-2" key={i}>
