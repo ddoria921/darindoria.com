@@ -134,6 +134,10 @@
   @apply mt-2;
 }
 
+.journal-entry-content li {
+  @apply mb-1;
+}
+
 .journal-entry-content code {
   @apply px-1;
 }

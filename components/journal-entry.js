@@ -28,7 +28,7 @@ function JournalEntryCard({ title, body }) {
 }
 
 function NextButton({ hidden, swiper, className, ...props }) {
-  const btnClasses = `bg-gray-200 rounded-lg w-20 h-10 sm:rounded-full sm:flex-none sm:self-center sm:w-6 sm:h-6 dark:bg-indigo-800 ${
+  const btnClasses = `bg-gray-200 rounded-lg w-20 h-10 sm:rounded-full sm:flex-none sm:self-center sm:w-6 sm:h-6 dark:bg-indigo-900 ${
     hidden ? "opacity-25 cursor-not-allowed" : "opacity-100"
   } ${className}`.trim();
   return (
@@ -55,7 +55,7 @@ function NextButton({ hidden, swiper, className, ...props }) {
 }
 
 function PreviousButton({ hidden, swiper, className, ...props }) {
-  const btnClasses = `bg-gray-200 rounded-lg w-20 h-10 sm:rounded-full sm:flex-none sm:self-center sm:w-6 sm:h-6 dark:bg-indigo-800 ${
+  const btnClasses = `bg-gray-200 rounded-lg w-20 h-10 sm:rounded-full sm:flex-none sm:self-center sm:w-6 sm:h-6 dark:bg-indigo-900 ${
     hidden ? "opacity-25 cursor-not-allowed" : "opacity-100"
   } ${className}`.trim();
   return (
