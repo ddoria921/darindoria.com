@@ -1,11 +1,12 @@
 {
   "name": "darindoria.com",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "npm run prebuild && next dev",
+    "build": "npm run prebuild && next build",
+    "start": "next start",
+    "prebuild": "node ./scripts/convert-md-to-json.js"
   },
   "dependencies": {
     "next": "9.4.4",
