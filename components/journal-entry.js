@@ -89,7 +89,10 @@ export default function JournalEntry({ visible, model }) {
   const [swiper, setSwiper] = useState(null);
   const [hideNext, setHideNext] = useState(true);
   const [hidePrev, setHidePrev] = useState(true);
-  const dateString = format(new Date(model.date), "LLLL do");
+  const dateString = format(
+    new Date(`${model.date}T00:00:00.000-05:00`),
+    "LLLL do"
+  );
 
   function handleSlideChange(swiper) {
     setHidePrev(swiper.isBeginning);
