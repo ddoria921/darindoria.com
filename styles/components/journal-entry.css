@@ -136,6 +136,7 @@
 
 .journal-entry-content code {
   @apply px-1;
+  @apply text-sm;
 }
 
 .journal-entry-content a {
