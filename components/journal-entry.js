@@ -2,6 +2,7 @@ import SwiperCore, { Navigation, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useState, useEffect } from "react";
 import snarkdown from "snarkdown";
+import { format } from "date-fns";
 
 // install Swiper components
 SwiperCore.use([A11y]);
@@ -88,6 +89,10 @@ export default function JournalEntry({ visible, model }) {
   const [swiper, setSwiper] = useState(null);
   const [hideNext, setHideNext] = useState(true);
   const [hidePrev, setHidePrev] = useState(true);
+  const dateString = format(
+    new Date(`${model.date}T00:00:00.000-05:00`),
+    "LLLL do"
+  );
 
   function handleSlideChange(swiper) {
     setHidePrev(swiper.isBeginning);
@@ -114,7 +119,7 @@ export default function JournalEntry({ visible, model }) {
         <span className="sm:italic">
           Week of <br className="hidden sm:block" />
         </span>{" "}
-        June 22nd
+        {dateString}
       </p>
 
       {/* line */}
