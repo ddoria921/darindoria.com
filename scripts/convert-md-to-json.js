@@ -49,8 +49,6 @@ function markdownToJournalEntry({ date, markdown }) {
   const journalEntryBlocks = contentBlocks.map((content) => {
     const [title, ...body] = content.split("\n");
 
-    console.log({ title, body });
-
     return {
       title: title.trim(),
       body: body.join("\n"),
