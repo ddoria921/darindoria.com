@@ -18,4 +18,21 @@
   body {
     background-color: var(--dark-bg-color);
   }
+
+  .prose p,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6,
+  .prose code,
+  .prose strong,
+  .prose ul,
+  .prose li {
+    @apply text-gray-200;
+  }
+
+  .prose a {
+    @apply text-indigo-400;
+  }
 }

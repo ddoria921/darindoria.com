@@ -11,10 +11,6 @@ function MyApp({ Component, pageProps }) {
     pageClass = "light:bg-gray-100";
   }
 
-  if (!router.pathname.includes("/blog")) {
-    pageStyle = { backgroundColor: "var(--dark-bg-color)" };
-  }
-
   return (
     <>
       <Head>
