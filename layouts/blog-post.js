@@ -34,8 +34,12 @@ export default function BlogPostLayout(frontMatterData) {
                 {frontMatterData.title}
               </h1>
               <div className="flex items-center text-sm pt-4 pb-2">
-                <div className="w-10 h-10 rounded-full overflow-hidden">
-                  <img src="/avatar-darin.jpg" alt="Darin's profile image" />
+                <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+                  <img
+                    className="w-full h-full object-cover"
+                    src="/avatar-darin.jpg"
+                    alt="Darin's profile image"
+                  />
                 </div>
                 <div className="flex flex-col pl-4 text-gray-600 dark:text-gray-400">
                   <span className="font-medium">{frontMatterData.author}</span>
