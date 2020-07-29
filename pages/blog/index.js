@@ -12,7 +12,7 @@ export default function Blog() {
         <meta name="description" content="Personal blog of Darin Doria." />
       </Head>
       <main className="max-w-xl mx-auto px-4 mt-4 sm:mt-12 sm:px-6 xl:max-w-3xl xl:px-0">
-        <h1 className="mt-2 mx-auto text-3xl leading-8 font-extrabold tracking-tight text-gray-900 w-full text-center md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg sm:text-4xl sm:leading-10 dark:text-gray-200">
+        <h1 className="mt-2 mx-auto text-3xl leading-8 font-extrabold tracking-tight text-gray-900 w-full md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg sm:text-4xl sm:leading-10 dark:text-gray-200">
           Personal Blog by Darin
         </h1>
         <ul className="py-8">
