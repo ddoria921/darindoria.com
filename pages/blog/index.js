@@ -22,7 +22,7 @@ export default function Blog() {
                 <header>
                   <Link href={formatPath(page.__resourcePath)}>
                     <a>
-                      <h2 className="text-3xl leading-10 font-semibold text-gray-900 dark:text-gray-200 hover:underline">
+                      <h2 className="text-3xl leading-8 mb-2 font-semibold text-gray-900 sm:mb-0 sm:leading-10 dark:text-gray-200 hover:underline">
                         {page.title}
                       </h2>
                     </a>
