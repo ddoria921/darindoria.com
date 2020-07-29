@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { frontMatter as firstPost } from "./screencast-tips-for-beginners/index.mdx";
+import { frontMatter as firstPost } from "./getting-started-with-screencasts/index.mdx";
 
 export default function Blog() {
   const blogPosts = [firstPost];
