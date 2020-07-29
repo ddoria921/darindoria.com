@@ -12,7 +12,7 @@ export default function BlogPostLayout(frontMatterData) {
         <main className="max-w-2xl mx-auto px-4 mt-4 mb-16 sm:mt-12 sm:px-6 xl:max-w-3xl xl:px-0">
           <p>
             <Link href="/blog">
-              <a className="group text-blue-600 border-blue-600 dark:text-indigo-400 dark:border-indigo-400">
+              <a className="group border-b-2 pb-1 text-blue-600 border-blue-600 dark:text-indigo-400 dark:border-indigo-400">
                 <svg
                   className="w-4 h-4 inline -mt-1 mr-1 transition-transform transform duration-150 ease-in-out group-hover:-translate-x-1"
                   fill="currentColor"
