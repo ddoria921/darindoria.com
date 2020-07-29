@@ -13,6 +13,23 @@
   --dark-card-color: #1a1c23;
 }
 
+.prose code {
+  @apply rounded;
+  @apply font-medium;
+  padding: 2px 4px;
+}
+
+.prose code::before,
+.prose code::after {
+  content: "";
+}
+
+@screen light {
+  .prose code {
+    @apply bg-gray-300;
+  }
+}
+
 /* custom CSS utilities go here */
 @screen dark {
   body {
@@ -34,5 +51,9 @@
 
   .prose a {
     @apply text-indigo-400;
+  }
+
+  .prose code {
+    @apply bg-gray-800;
   }
 }
