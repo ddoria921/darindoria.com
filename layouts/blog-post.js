@@ -30,7 +30,7 @@ export default function BlogPostLayout(frontMatterData) {
           </p>
           <article className="mx-auto">
             <header className="py-6 lg:pb-8 xl:pb-10">
-              <h1 className="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-4xl md:leading-10 lg:text-5xl lg:mb-2 dark:text-gray-200">
+              <h1 className="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-4xl md:leading-12 lg:text-5xl lg:mb-2 lg:leading-13 dark:text-gray-200">
                 {frontMatterData.title}
               </h1>
               <div className="flex items-center text-sm pt-4 pb-2">

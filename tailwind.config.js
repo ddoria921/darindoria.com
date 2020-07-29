@@ -6,6 +6,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      lineHeight: {
+        "11": "2.75rem",
+        "12": "3rem",
+        "13": "3.25rem",
+        "14": "3.5rem",
+      },
       screens: {
         dark: { raw: "(prefers-color-scheme: dark)" },
         light: { raw: "(prefers-color-scheme: light)" },
