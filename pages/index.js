@@ -5,11 +5,18 @@ export default function Home() {
     <div className="max-w-screen-sm mx-auto py-6 px-3">
       <header>
         <nav>
-          <ul>
+          <ul className="flex">
             <li>
               <Link href="/work-journal">
                 <a className="text-lg text-blue-700 underline dark:text-indigo-400">
                   Work Journal
+                </a>
+              </Link>
+            </li>
+            <li className="pl-4">
+              <Link href="/blog">
+                <a className="text-lg text-blue-700 underline dark:text-indigo-400">
+                  Blog
                 </a>
               </Link>
             </li>
