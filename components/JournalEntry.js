@@ -38,6 +38,8 @@ function NextButton({ hidden, swiper, className, ...props }) {
       disabled={hidden}
       onClick={() => swiper && swiper.slideNext()}
       className={btnClasses}
+      type="button"
+      title="next card"
       {...props}
     >
       <svg
@@ -65,6 +67,8 @@ function PreviousButton({ hidden, swiper, className, ...props }) {
       disabled={hidden}
       onClick={() => swiper && swiper.slidePrev()}
       className={btnClasses}
+      type="button"
+      title="previous card"
       {...props}
     >
       <svg
