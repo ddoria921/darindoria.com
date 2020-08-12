@@ -123,10 +123,15 @@
   }
 }
 
+/* Hide the date on the first journal entry */
 .journal-entry:last-child .journal-entry-date {
   display: none;
 }
 
+/* Hide the buttons on the first journal entry */
+.journal-entry:last-child button {
+  visibility: hidden;
+}
 /* Markdown styling */
 .journal-entry-content ul {
   @apply list-disc;
