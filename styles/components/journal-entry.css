@@ -58,18 +58,21 @@
 .journal-entry.is-visible .journal-entry-bullet {
   transform: scale(1);
   transition: transform var(--animate-in);
+  transition-delay: var(--transition-delay);
 }
 
 .journal-entry.is-visible .journal-entry-date {
   transform: translateX(0);
   opacity: 0.99;
   transition: transform var(--animate-in), opacity var(--animate-in);
+  transition-delay: var(--transition-delay);
 }
 
 .journal-entry.is-visible .journal-entry-card-container {
   transform: translateX(0);
   opacity: 0.99;
   transition: transform var(--animate-in), opacity var(--animate-in);
+  transition-delay: var(--transition-delay);
 }
 
 .journal-entry button {
@@ -78,6 +81,7 @@
 
 .journal-entry.is-visible button:not(:disabled) {
   opacity: 0.99;
+  transition-delay: var(--transition-delay);
 }
 
 .journal-entry:not(.is-visible) button {

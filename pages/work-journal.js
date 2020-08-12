@@ -3,8 +3,17 @@ import VisibilitySensor from "react-visibility-sensor";
 
 import { getAllJournalEntries } from "../lib/api";
 import JournalEntry from "../components/JournalEntry";
+import { useEffect, useState } from "react";
 
 export default function WorkJournal({ journalEntries }) {
+  const [delay, setDelay] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDelay(false);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <Head>
@@ -30,7 +39,13 @@ export default function WorkJournal({ journalEntries }) {
               partialVisibility={true}
             >
               {({ isVisible }) => (
-                <JournalEntry visible={isVisible} model={entry} />
+                <JournalEntry
+                  visible={isVisible}
+                  model={entry}
+                  style={{
+                    "--transition-delay": delay ? (i + 1) * 125 + "ms" : null,
+                  }}
+                />
               )}
             </VisibilitySensor>
           ))}
