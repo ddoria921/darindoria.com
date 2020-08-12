@@ -132,6 +132,19 @@
 .journal-entry:last-child button {
   visibility: hidden;
 }
+
+/* Hide the off screen cards to not mess up tab order */
+.journal-entry .swiper-slide:not(.swiper-slide-active) {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s linear, visibility 0s linear 0.2s;
+}
+.journal-entry .swiper-slide {
+  transition-delay: 0s;
+  visibility: visible;
+  opacity: 1;
+}
+
 /* Markdown styling */
 .journal-entry-content ul {
   @apply list-disc;
