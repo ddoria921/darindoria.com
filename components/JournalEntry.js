@@ -86,7 +86,7 @@ function PreviousButton({ hidden, swiper, className, ...props }) {
   );
 }
 
-export default function JournalEntry({ visible, model }) {
+export default function JournalEntry({ visible, model, ...props }) {
   const journalEntryClasses = `journal-entry flex flex-col sm:flex-row relative w-full pb-8 ${
     visible ? "is-visible" : ""
   }`.trim();
@@ -117,7 +117,7 @@ export default function JournalEntry({ visible, model }) {
   useEffect(updateSwiper, [swiper]);
 
   return (
-    <li className={journalEntryClasses}>
+    <li className={journalEntryClasses} {...props}>
       {/* date */}
       <p className="journal-entry-date sm:text-right">
         <span className="sm:italic">
