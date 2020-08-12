@@ -142,6 +142,7 @@ export default function JournalEntry({ visible, model }) {
           centeredSlides={true}
           onSlideChange={handleSlideChange}
           onSwiper={setSwiper}
+          simulateTouch={false}
           spaceBetween={40}
         >
           {model.entries.map((entry, i) => (
