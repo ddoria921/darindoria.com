@@ -17,6 +17,18 @@
   padding: 18vmin 4vmax 0vmax;
 }
 
+.min-h-screen-webkit {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+
+.h-screen-webkit {
+  height: 100vh;
+  /* mobile viewport bug fix */
+  height: -webkit-fill-available;
+}
+
 .prose code {
   @apply rounded;
   @apply font-medium;

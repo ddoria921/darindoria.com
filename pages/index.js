@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="h-screen flex flex-col mx-auto py-6 px-3">
+    <div className="h-screen-webkit flex flex-col mx-auto py-6 px-3">
       <header>
         <nav role="navigation" aria-label="Site">
           <ul className="flex justify-end">
