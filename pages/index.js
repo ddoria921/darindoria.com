@@ -17,7 +17,7 @@ export default function Home() {
       </header>
       <main className="home-container pt-16 px-4 flex-grow flex justify-center lg:justify-end">
         <div className="lg:w-3/4">
-          <h1 className="text-5xl leading-12 md:text-6xl md:leading-16 font-bold lg:text-8xl lg:leading-19 lg:max-w-4xl dark:text-gray-200">
+          <h1 className="text-gray-900 text-5xl leading-12 md:text-6xl md:leading-16 font-bold lg:text-8xl lg:leading-19 lg:max-w-4xl dark:text-gray-200">
             Software engineer based in Orlando. Currently writing code at ART19.
           </h1>
         </div>
@@ -27,7 +27,6 @@ export default function Home() {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lg text-blue-700 underline dark:text-indigo-400"
             href="https://twitter.com/_darindoria"
             title="Twitter"
             aria-label="Twitter"
@@ -40,7 +39,6 @@ export default function Home() {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lg text-blue-700 underline dark:text-indigo-400"
             href="https://github.com/ddoria921"
             title="GitHub"
             aria-label="GitHub"
@@ -53,7 +51,6 @@ export default function Home() {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lg text-blue-700 underline dark:text-indigo-400"
             href="https://www.linkedin.com/in/darindoria"
             title="LinkedIn"
             aria-label="LinkedIn"
@@ -69,7 +66,7 @@ export default function Home() {
 function NavLink({ href, children }) {
   return (
     <Link href={href}>
-      <a className="text-lg text-blue-700 border-b-2 border-blue-700 dark:text-indigo-400 dark:border-indigo-400">
+      <a className="text-lg text-blue-700 border-b-2 border-blue-700 lg:text-xl dark:text-indigo-400 dark:border-indigo-400">
         {children}
       </a>
     </Link>
@@ -79,7 +76,7 @@ function NavLink({ href, children }) {
 function TwitterIcon() {
   return (
     <svg
-      className="w-6 h-6 text-blue-700 dark:text-indigo-400"
+      className="text-gray-900 dark:text-gray-200 w-6 h-6 lg:w-8 lg:h-8"
       role="img"
       viewBox="0 0 24 24"
       fill="currentColor"
@@ -96,7 +93,7 @@ function TwitterIcon() {
 function GitHubIcon() {
   return (
     <svg
-      className="w-6 h-6 text-blue-700 dark:text-indigo-400"
+      className="text-gray-900 dark:text-gray-200 w-6 h-6 lg:w-8 lg:h-8"
       role="img"
       viewBox="0 0 24 24"
       fill="currentColor"
@@ -113,8 +110,8 @@ function GitHubIcon() {
 function LinkedInIcon() {
   return (
     <svg
+      className="text-gray-900 dark:text-gray-200 w-6 h-6 lg:w-8 lg:h-8"
       role="img"
-      className="w-6 h-6 text-blue-700 dark:text-indigo-400"
       viewBox="0 0 24 24"
       fill="currentColor"
     >
