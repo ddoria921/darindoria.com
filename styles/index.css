@@ -13,6 +13,22 @@
   --dark-card-color: #1a1c23;
 }
 
+.home-container {
+  padding: 18vmin 4vmax 0vmax;
+}
+
+.min-h-screen-webkit {
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+  min-height: 100vh;
+}
+
+.h-screen-webkit {
+  /* mobile viewport bug fix */
+  height: -webkit-fill-available;
+  height: 100vh;
+}
+
 .prose code {
   @apply rounded;
   @apply font-medium;
@@ -30,10 +46,24 @@
   }
 }
 
+.clip-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.text-gradient {
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+}
+
 /* custom CSS utilities go here */
 @screen dark {
   body {
     background-color: var(--dark-bg-color);
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(to top, #7f9cf5 0%, #bfd9fe 100%);
   }
 
   .prose p,

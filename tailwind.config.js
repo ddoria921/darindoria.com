@@ -6,11 +6,21 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        "7xl": "5rem",
+        "8xl": "6rem",
+        "9xl": "7rem",
+      },
       lineHeight: {
-        "11": "2.75rem",
-        "12": "3rem",
-        "13": "3.25rem",
-        "14": "3.5rem",
+        11: "2.75rem",
+        12: "3rem",
+        13: "3.25rem",
+        14: "3.5rem",
+        15: "4rem",
+        16: "4.5rem",
+        18: "5.5rem",
+        19: "6rem",
+        20: "7rem",
       },
       screens: {
         dark: { raw: "(prefers-color-scheme: dark)" },
