@@ -18,15 +18,15 @@
 }
 
 .min-h-screen-webkit {
-  min-height: 100vh;
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
+  min-height: 100vh;
 }
 
 .h-screen-webkit {
-  height: 100vh;
   /* mobile viewport bug fix */
   height: -webkit-fill-available;
+  height: 100vh;
 }
 
 .prose code {
@@ -46,10 +46,24 @@
   }
 }
 
+.clip-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.text-gradient {
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+}
+
 /* custom CSS utilities go here */
 @screen dark {
   body {
     background-color: var(--dark-bg-color);
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(to top, #7f9cf5 0%, #bfd9fe 100%);
   }
 
   .prose p,

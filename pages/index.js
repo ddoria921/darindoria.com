@@ -6,19 +6,20 @@ export default function Home() {
       <header>
         <nav role="navigation" aria-label="Site">
           <ul className="flex justify-end">
-            <li>
+            <li className="pr-4">
               <NavLink href="/work-journal">Work Journal</NavLink>
             </li>
-            <li className="pl-4">
+            <li className="pr-4">
               <NavLink href="/blog">Blog</NavLink>
             </li>
           </ul>
         </nav>
       </header>
-      <main className="home-container pt-16 px-4 flex-grow flex justify-center lg:justify-end">
-        <div className="lg:w-3/4">
-          <h1 className="text-gray-900 text-5xl leading-12 md:text-6xl md:leading-16 font-bold lg:text-8xl lg:leading-19 lg:max-w-4xl dark:text-gray-200">
-            Software engineer based in Orlando. Currently writing code at ART19.
+      <main className="home-container pt-16 px-4 flex-grow flex justify-center">
+        <div className="lg:w-full xl:w-3/4">
+          <h1 className="text-5xl leading-12 md:text-7xl md:leading-18 font-bold lg:text-9xl lg:leading-20 lg:max-w-4xl clip-text text-gradient">
+            Software engineer based in Orlando. Currently writing code at
+            Wistia.
           </h1>
         </div>
       </main>
