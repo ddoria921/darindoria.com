@@ -42,12 +42,6 @@ body {
   }
 }
 
-.clip-text {
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
 .text-gradient {
   background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
 }

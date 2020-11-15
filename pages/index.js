@@ -18,7 +18,7 @@ export default function Home() {
       </header>
       <main className="home-container pt-16 px-4 flex-grow flex justify-center">
         <div className="lg:w-full xl:w-3/4">
-          <h1 className="text-5xl leading-12 md:text-7xl md:leading-18 font-bold lg:text-8xl lg:leading-19 lg:max-w-4xl xl:text-9xl xl:leading-20 clip-text text-gradient">
+          <h1 className="text-5xl leading-12 md:text-7xl md:leading-18 font-bold lg:text-8xl lg:leading-19 lg:max-w-4xl xl:text-9xl xl:leading-20 bg-clip-text text-transparent text-gradient">
             Software engineer based in Orlando. Currently writing code at
             Wistia.
           </h1>
