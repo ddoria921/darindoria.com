@@ -17,8 +17,9 @@ function MyApp({ Component, pageProps }) {
         <title>Darin Doria</title>
         <meta name="description" content="Personal website of Darin Doria." />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div className={`min-h-screen-webkit ${pageClass}`} style={pageStyle}>
+      <div className={`${pageClass}`} style={pageStyle}>
         <Component {...pageProps} />
       </div>
     </>

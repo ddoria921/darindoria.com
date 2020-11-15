@@ -13,20 +13,16 @@
   --dark-card-color: #1a1c23;
 }
 
-.home-container {
-  padding: 18vmin 4vmax 0vmax;
-}
-
-.min-h-screen-webkit {
-  /* mobile viewport bug fix */
-  min-height: -webkit-fill-available;
-  min-height: 100vh;
-}
-
-.h-screen-webkit {
+html,
+body {
   /* mobile viewport bug fix */
   height: -webkit-fill-available;
-  height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+.home-container {
+  min-height: 260px;
+  padding: 18vmin 4vmax 3vmin;
 }
 
 .prose code {
