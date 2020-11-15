@@ -1,4 +1,4 @@
-export default function ({ alt, caption, src }) {
+export default function Image({ alt, caption, src }) {
   const altText = alt || caption;
   return (
     <figure>
