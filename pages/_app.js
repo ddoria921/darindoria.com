@@ -18,12 +18,14 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="Personal website of Darin Doria." />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script
-          async
-          defer
-          data-domain="darindoria.com"
-          src="https://plausible.io/js/plausible.js"
-        ></script>
+        {process.env.NODE_ENV === "production" && (
+          <script
+            async
+            defer
+            data-domain="darindoria.com"
+            src="https://plausible.io/js/plausible.js"
+          ></script>
+        )}
       </Head>
       <div className={`${pageClass}`} style={pageStyle}>
         <Component {...pageProps} />
