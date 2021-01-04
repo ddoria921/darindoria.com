@@ -1,21 +1,10 @@
-import Link from "next/link";
+import Header from "../components/Header";
 import { TwitterIcon, LinkedInIcon, GitHubIcon } from "../components/Icons";
 
 export default function Home() {
   return (
     <div className="flex flex-col mx-auto py-6 px-3">
-      <header className="flex-none">
-        <nav role="navigation" aria-label="Site">
-          <ul className="flex justify-end">
-            <li className="pr-4">
-              <NavLink href="/work-journal">Work Journal</NavLink>
-            </li>
-            <li className="pr-4">
-              <NavLink href="/blog">Blog</NavLink>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Header />
       <main className="home-container pt-16 px-4 flex-grow flex justify-center">
         <div className="lg:w-full xl:w-3/4">
           <h1 className="text-5xl leading-12 md:text-7xl md:leading-18 font-bold lg:text-8xl lg:leading-19 lg:max-w-4xl xl:text-9xl xl:leading-20 bg-clip-text text-transparent text-gradient">
@@ -62,15 +51,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  );
-}
-
-function NavLink({ href, children }) {
-  return (
-    <Link href={href}>
-      <a className="text-lg text-blue-700 border-b-2 border-blue-700 lg:text-2xl dark:text-indigo-400 dark:border-indigo-400">
-        {children}
-      </a>
-    </Link>
   );
 }
