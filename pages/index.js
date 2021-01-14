@@ -1,5 +1,10 @@
 import Header from "../components/Header";
-import { TwitterIcon, LinkedInIcon, GitHubIcon } from "../components/Icons";
+import {
+  TwitterIcon,
+  LinkedInIcon,
+  GitHubIcon,
+  YouTubeIcon,
+} from "../components/Icons";
 
 export default function Home() {
   return (
@@ -23,6 +28,18 @@ export default function Home() {
             aria-label="Twitter"
           >
             <TwitterIcon className="text-gray-900 dark:text-gray-200 w-8 h-8 lg:w-10 lg:h-10" />
+          </a>
+        </div>
+
+        <div className="ml-6">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.youtube.com/channel/UCdfakO1sxJ_TfQKx18rDxSg"
+            title="Twitter"
+            aria-label="Twitter"
+          >
+            <YouTubeIcon className="text-gray-900 dark:text-gray-200 w-8 h-8 lg:w-10 lg:h-10" />
           </a>
         </div>
 
