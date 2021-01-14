@@ -36,8 +36,8 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.youtube.com/channel/UCdfakO1sxJ_TfQKx18rDxSg"
-            title="Twitter"
-            aria-label="Twitter"
+            title="YouTube"
+            aria-label="YouTube"
           >
             <YouTubeIcon className="text-gray-900 dark:text-gray-200 w-8 h-8 lg:w-10 lg:h-10" />
           </a>
