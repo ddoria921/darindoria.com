@@ -40,6 +40,7 @@ module.exports = {
   },
   variants: {
     translate: ["responsive", "hover", "focus", "group-hover"],
+    borderWidth: ["hover", "focus"],
   },
   plugins: [require("@tailwindcss/typography")],
 };

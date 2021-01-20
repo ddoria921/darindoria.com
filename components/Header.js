@@ -33,7 +33,7 @@ function NavLink({ href, children }) {
       activeClassName="text-blue-900 border-blue-900 dark:text-indigo-600 dark:border-indigo-600"
       href={href}
     >
-      <a className="text-lg text-blue-700 border-b-2 border-blue-700 lg:text-2xl dark:text-indigo-400 dark:border-indigo-400">
+      <a className="text-lg text-blue-700 border-blue-700 lg:text-2xl dark:text-indigo-400 dark:border-indigo-400 hover:border-b-2">
         {children}
       </a>
     </ActiveLink>
