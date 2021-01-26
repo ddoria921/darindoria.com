@@ -34,7 +34,7 @@ export default function JournalEntry({ visible, model, ...props }) {
   return (
     <li className={journalEntryClasses} {...props}>
       {/* date */}
-      <p className="journal-entry-date sm:text-right">
+      <p className="journal-entry-date mb-4 sm:mb-0 sm:text-right">
         <span className="sm:italic">
           Week of <br className="hidden sm:block" />
         </span>{" "}
