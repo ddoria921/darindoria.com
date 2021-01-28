@@ -8,7 +8,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="flex flex-col mx-auto py-6 px-3">
+    <div className="flex flex-col mx-auto">
       <Header />
       <main className="home-container pt-16 px-4 flex-grow flex justify-center">
         <div className="lg:w-full xl:w-3/4">

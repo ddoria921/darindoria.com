@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
         <title>Darin Doria</title>
         <meta name="description" content="Personal website of Darin Doria." />
         <link rel="icon" href={svgIcon} />
-        <meta charset="UTF-8"></meta>
+        <meta charSet="UTF-8"></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {process.env.NODE_ENV === "production" && (
           <script
