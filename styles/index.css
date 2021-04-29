@@ -3,6 +3,7 @@
 
 /* custom CSS component class go here  */
 @import "components/journal-entry.css";
+@import "components/animating-number.css";
 
 @tailwind utilities;
 
