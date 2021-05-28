@@ -17,8 +17,7 @@
     "next-mdx-enhanced": "^5.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-visibility-sensor": "^5.1.1",
-    "snarkdown": "^1.2.2"
+    "react-visibility-sensor": "^5.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.7",
