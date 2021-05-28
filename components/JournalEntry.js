@@ -1,33 +1,37 @@
-import { useState, useEffect } from "react";
-import snarkdown from "snarkdown";
 import { format } from "date-fns";
+import NotionBlock from "./NotionBlock";
 
-function JournalEntryCard({ title, body }) {
-  const bodyAsHtml = snarkdown(body);
+function JournalEntryCard({ blocks }) {
+  const headerBlock = blocks[0];
+
   return (
     <>
       {/* info-card */}
       <div className="journal-entry-card light:bg-white shadow rounded-md px-4 py-3 mb-6">
-        <h3 className="text-xs uppercase tracking-wider font-bold text-gray-900 dark:text-gray-400">
-          {title}
-        </h3>
-        {/* journal info goes here */}
-        <div
-          className="journal-entry-content break-words"
-          dangerouslySetInnerHTML={{ __html: bodyAsHtml }}
-        ></div>
+        <NotionBlock block={headerBlock} />
+
+        <div className="journal-entry-content break-words">
+          <ul>
+            {blocks
+              .filter((block) => block.type === "bulleted_list_item")
+              .map((block, i) => (
+                <NotionBlock key={i} block={block} />
+              ))}
+          </ul>
+        </div>
       </div>
     </>
   );
 }
 
 export default function JournalEntry({ visible, model, ...props }) {
-  const journalEntryClasses = `journal-entry flex flex-col sm:flex-row relative w-full pb-8 ${
-    visible ? "is-visible" : ""
-  }`.trim();
+  const journalEntryClasses =
+    `journal-entry flex flex-col sm:flex-row relative w-full pb-8 ${
+      visible ? "is-visible" : ""
+    }`.trim();
 
   const dateString = format(
-    new Date(`${model.date}T00:00:00.000-05:00`),
+    new Date(`${model.createdAt}T00:00:00.000-05:00`),
     "LLLL do"
   );
 
@@ -49,8 +53,13 @@ export default function JournalEntry({ visible, model, ...props }) {
 
       {/* info-card container */}
       <div className="journal-entry-card-container relative w-full flex-auto sm:max-w-md md:max-w-none">
-        {model.entries.map((entry, i) => (
-          <JournalEntryCard key={i} title={entry.title} body={entry.body} />
+        {model.groups.map((entry, i) => (
+          <JournalEntryCard
+            key={i}
+            blocks={entry.blocks}
+            title={entry.title}
+            body={entry.body}
+          />
         ))}
       </div>
     </li>
