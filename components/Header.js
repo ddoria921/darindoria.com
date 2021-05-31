@@ -41,13 +41,13 @@ export default function Header({ forceLightMode }) {
 function NavLink({ href, children, forceLightMode }) {
   const activeClasses = forceLightMode
     ? "text-gray-500 border-gray-500"
-    : "text-blue-900 border-blue-900 dark:text-indigo-900 dark:border-indigo-900";
+    : "text-blue-900 border-blue-900";
   const textClasses = forceLightMode
     ? "text-gray-200 border-gray-200"
     : "text-blue-700 border-blue-700 dark:text-indigo-400 dark:border-indigo-400";
   return (
-    <ActiveLink activeClassName={`border-b ${activeClasses}`} href={href}>
-      <a className={`text-lg lg:text-2xl hover:border-b ${textClasses}`}>
+    <ActiveLink activeClassName={`border-b-2 ${activeClasses}`} href={href}>
+      <a className={`text-lg lg:text-2xl hover:border-b-2 ${textClasses}`}>
         {children}
       </a>
     </ActiveLink>
