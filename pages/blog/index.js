@@ -1,11 +1,14 @@
+// For getStaticProps
+import fs from "fs";
+import matter from "gray-matter";
+import path from "path";
+import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
+
 import Head from "next/head";
 import Link from "next/link";
-import { frontMatter as firstPost } from "./getting-started-with-screencasts/index.mdx";
 import Header from "../../components/Header";
 
-export default function Blog() {
-  const blogPosts = [firstPost];
-
+export default function Blog({ posts }) {
   return (
     <>
       <Head>
@@ -20,30 +23,36 @@ export default function Blog() {
             Personal Blog by Darin
           </h1>
           <ul className="py-8">
-            {blogPosts.map((page) => (
-              <li key={page.__resourcePath}>
+            {posts.map((post) => (
+              <li key={post.filePath}>
                 <article>
                   <header>
-                    <Link href={formatPath(page.__resourcePath)}>
+                    <Link
+                      as={`/blog/${post.filePath.replace(/\.mdx?$/, "")}`}
+                      href={`/blog/[slug]`}
+                    >
                       <a>
                         <h2 className="text-3xl leading-8 mb-2 font-semibold text-gray-900 sm:mb-0 sm:leading-10 dark:text-gray-200 hover:underline">
-                          {page.title}
+                          {post.data.title}
                         </h2>
                       </a>
                     </Link>
                     <span className="text-gray-600 text-sm dark:text-gray-400">
-                      <time dateTime={page.publishedOn}>
-                        {page.publishedOnFriendly}
+                      <time dateTime={post.data.publishedOn}>
+                        {post.data.publishedOnFriendly}
                       </time>
                       <span> &middot; </span>
-                      <span>{page.readTime} read</span>
+                      <span>{post.data.readTime} read</span>
                     </span>
                   </header>
 
                   <section className="text-gray-800 py-2 dark:text-gray-200">
-                    <p>{page.description}</p>
+                    <p>{post.data.description}</p>
                     <p className="mt-2">
-                      <Link href={formatPath(page.__resourcePath)}>
+                      <Link
+                        as={`/blog/${post.filePath.replace(/\.mdx?$/, "")}`}
+                        href={`/blog/[slug]`}
+                      >
                         <a className="group border-b-2 pb-1 text-blue-600 border-blue-600 dark:text-indigo-400 dark:border-indigo-400">
                           Read More
                           <svg
@@ -71,6 +80,17 @@ export default function Blog() {
   );
 }
 
-function formatPath(p) {
-  return p.replace(/\/index\.mdx$/, "");
+export function getStaticProps() {
+  const posts = postFilePaths.map((filePath) => {
+    const source = fs.readFileSync(path.join(POSTS_PATH, filePath));
+    const { content, data } = matter(source);
+
+    return {
+      content,
+      data,
+      filePath,
+    };
+  });
+
+  return { props: { posts } };
 }
