@@ -41,7 +41,7 @@ export default function WorkJournal({ notionJournalEntries }) {
   );
 }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const notionJournalEntries = await getPublishedJournalEntries();
 
   return {
