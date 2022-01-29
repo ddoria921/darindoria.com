@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { format, isSameYear } from "date-fns";
 import NotionBlock from "./NotionBlock";
 
 function JournalEntryCard({ blocks }) {
@@ -30,10 +30,12 @@ export default function JournalEntry({ visible, model, ...props }) {
       visible ? "is-visible" : ""
     }`.trim();
 
-  const dateString = format(
-    new Date(`${model.createdAt}T00:00:00.000-05:00`),
-    "LLLL do"
-  );
+  const createdAtDate = new Date(`${model.createdAt}T00:00:00.000-05:00`);
+  // if createdAt is previous year, show the year
+  const dateFormat = isSameYear(createdAtDate, new Date())
+    ? "LLLL do"
+    : "LLLL do yyyy";
+  const dateString = format(createdAtDate, dateFormat);
 
   return (
     <li className={journalEntryClasses} {...props}>
